@@ -1,2 +1,2 @@
-# soundify
+# Soundify
 SoundCloud + Spotify
