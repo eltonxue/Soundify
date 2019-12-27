@@ -1,5 +1,5 @@
-# Soundify
-SoundCloud + Spotify
+# SpotifyCloud
+Spotify + SoundCloud
 
 Client:
 - React
@@ -12,5 +12,5 @@ Server:
 - JWT https://jwt.io/
 - PostGraphile (Postgres & GraphQL) https://www.graphile.org/postgraphile/
 - TypeGraphQL (Typescript) https://github.com/MichalLytek/type-graphql
-- SoundCloud API https://developers.soundcloud.com/
 - Spotify API https://developer.spotify.com/documentation/web-api/
+- SoundCloud API https://developers.soundcloud.com/
