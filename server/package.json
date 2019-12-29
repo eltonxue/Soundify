@@ -2,10 +2,28 @@
   "name": "server",
   "version": "1.0.0",
   "description": "Apollo Server for Soundify",
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
-    "test": "npm test"
+    "test": "npm test",
+    "start": "npm run build:live",
+    "build": "tsc -p .",
+    "build:live": "nodemon --watch 'src/**/*.ts' --exec 'ts-node' src/index.ts"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "@types/express": "^4.17.2",
+    "@types/graphql": "^14.5.0",
+    "@types/node": "^13.1.1",
+    "apollo-server-express": "^2.9.15",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "graphql": "^14.5.8",
+    "graphql-tools": "^4.0.6",
+    "nodemon": "^2.0.2",
+    "reflect-metadata": "^0.1.13",
+    "ts-node": "^8.5.4",
+    "type-graphql": "^0.17.6",
+    "typescript": "^3.7.4"
+  }
 }
