@@ -1,5 +1,4 @@
-import { Resolver } from "type-graphql";
-import { Playlist } from "../types";
+import { Resolver, Field } from "type-graphql";
 
-@Resolver(Playlist)
+@Resolver()
 export default class PlaylistResolver {}

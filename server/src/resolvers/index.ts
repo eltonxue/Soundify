@@ -1,7 +1,9 @@
-import UserResolver from "./UserResolver";
+import AuthResolver from "./AuthResolver";
 import PlaylistResolver from "./PlaylistResolver";
 import SongResolver from "./SongResolver";
 
-const resolvers = [UserResolver, PlaylistResolver, SongResolver];
+// const resolvers = [AuthResolver, PlaylistResolver, SongResolver];
+
+const resolvers = [AuthResolver];
 
 export default resolvers;

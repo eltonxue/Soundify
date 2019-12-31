@@ -4,9 +4,12 @@ import dotenv from "dotenv";
 dotenv.config();
 
 import express from "express";
+import { createConnection, getConnectionOptions } from "typeorm";
 import { ApolloServer } from "apollo-server-express";
 import { GraphQLSchema } from "graphql";
 import { buildSchema } from "type-graphql";
+
+import { validateTokens } from "./middlewares/validateTokens";
 
 import resolvers from "./resolvers";
 
@@ -15,9 +18,20 @@ const PORT: String | Number = process.env.PORT || 4000;
 const startServer = async () => {
   const schema: GraphQLSchema = await buildSchema({ resolvers });
 
-  const server: ApolloServer = new ApolloServer({ schema });
+  // get options from ormconfig.js
+  const dbOptions = await getConnectionOptions(
+    process.env.NODE_ENV || "development"
+  );
+
+  await createConnection({ ...dbOptions, name: "default" });
+
+  const server: ApolloServer = new ApolloServer({
+    schema,
+    context: ({ req, res }) => ({ req, res })
+  });
 
   const app = express();
+  app.use(validateTokens);
   server.applyMiddleware({ app });
 
   app.listen(PORT, () =>

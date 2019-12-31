@@ -1,5 +1,4 @@
-import { Resolver } from "type-graphql";
-import { Song } from "../types";
+import { Resolver, Field } from "type-graphql";
 
-@Resolver(Song)
+@Resolver()
 export default class SongResolver {}
